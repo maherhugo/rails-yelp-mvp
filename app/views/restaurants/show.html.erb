@@ -1,0 +1,18 @@
+  <div class=showdiv>
+
+  <h2 class=header2><%= @restaurant.name %></h2>
+  <p><%= @restaurant.category %></p>
+  <p><%= @restaurant.phone_number %></p>
+  <p><%= @restaurant.address %></p>
+  <%= link_to "Back to all restaurants", restaurants_path %>
+  <%= link_to "Edit restaurant", edit_restaurant_path %> <br />
+  <%= link_to "Add review", new_restaurant_review_path(@restaurant) %>
+  </div>
+
+  <div class=reviewsdiv>
+  <h5>Reviews:</h5>
+  <% @restaurant.reviews.each do |review| %>
+  <p><%= review.content %> </p>
+  <p><%= review.rating %>/5</p>
+  <% end %>
+  </div>
